@@ -1,8 +1,10 @@
 # HTML5编程能力入门
 
 1. 简介
-    [//]:-[示例](demo/1.intro/index.md)
-    [//]:-[说明](draft/1.intro/index.md)
+<!--
+    -[示例](demo/1.intro/index.md)
+    -[说明](draft/1.intro/index.md)
+-->
 2. 个人主页
     -[示例](demo/2.home/index.md)
     [//]:-[说明](draft/2.home/index.md)
