@@ -35,6 +35,8 @@
 		    var foods;								//
 		    var snakes;								//
 		    var scores;								//
+		    var foodPlace;
+		    var snakePlace;
 		    
 		</script>
 	    <script type="text/javascript">
@@ -45,6 +47,8 @@
     			foods = document.getElementById("foods");		//
     			snakes = document.getElementById("snakes");		//
     			steps = document.getElementById("steps");		//
+    			foodPlace = document.getElementById("foodPlace");
+                snakePlace = document.getElementById("snakePlace");
         		field   = document.getElementById("field"); 	//得到画布
         		context = field.getContext("2d");           	//得到画布环境
         		fieldWidth = field.width;						//获得画布的实际宽度
@@ -109,6 +113,8 @@
     			foods.innerHTML = foodNumber;
     			snakes.innerHTML = snakeLength;
     			steps.innerHTML = walkSteps;
+    			foodPlace.innerHTML = "(" + foodX*snakeUnitSize + "," + foodY*snakeUnitSize + ")";
+                snakePlace.innerHTML = "(" + x + "," + y + ")";
     		}
     	</script>
 	    <script type="text/javascript">
@@ -178,6 +184,14 @@
 								<td align="right">行走步数：</td>
 								<td align="left" id="steps">1000</td>
 							</tr>
+                            <tr>
+                                <td align="right">食物位置：</td>
+                                <td align="left" id="foodPlace">14</td>
+                            </tr>
+                            <tr>
+                                <td align="right">蛇头位置：</td>
+                                <td align="left" id="snakePlace">1000</td>
+                            </tr>
 						</table>
 		    		</td>
 		    	</tr>
