@@ -24,3 +24,6 @@
 8. 迭代增量8-显示游戏状态
     -[展示](snake08.html)
     -[代码](https://github.com/daweizh/h5/blob/master/demo/6.snake/snake08.html)
+<hr>
+
+[返回首页](../../)
