@@ -33,7 +33,7 @@
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake08.html)
     -[注解](https://github.com/daweizh/h5/blob/master/6.snake/note_snake08.html)
 
-## 微信订阅号
+## w.微信订阅号
 
 1. 智数精英-关注中小学程序设计及相关讨论
 2. 随话录-记录小朋友们的成长时光
@@ -43,7 +43,7 @@
 ![欢迎关注“随话录”订阅号](../assets/me/img/shl8.jpg)
 ![欢迎关注“西山征途”订阅号](../assets/me/img/xszt8.jpg)
 
-## 返回首页
+## b.[返回首页](../)
 
 ----------
 
