@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>贪吃蛇</title>
+		<style type="text/css">
+	        div {
+	            width:400px;
+	            margin:0 auto;
+	        }
+	        canvas {
+	            background:#abcdef;
+	            border:1px solid #000000;
+	        }
+		</style>
+	    <script type="text/javascript">
+	    	var field;                      		//定义画布
+	    	var context;                    		//定义绘画环境
+	    	var fieldWidth;							//定义画布的宽度
+	    	var fieldHeight;						//定义画布的高度
+	    	var speed           = 160 ;     		//蛇的速度 
+	    	var foodX   = foodY = 0;        		//食物食物最开始出现的地方 
+	    	var snakeUnitSize   = 8;        		//蛇身单元大小 
+    		var x       = y     = snakeUnitSize;   	//蛇最开始出没的地方
+    		var direction       = 3;        		//1向上; 2向右; 0向左;  3向下 
+		</script>
+	    <script type="text/javascript">
+    		/*
+     		 * 打开或刷新网页时执行，只执行一次
+     		 */
+    		window.onload = function(){
+        		field   = document.getElementById("field"); 	//得到画布
+        		context = field.getContext("2d");           	//得到画布环境
+        		fieldWidth = field.width;						//获得画布的实际宽度
+        		fieldHeight = field.height;						//获得画布的实际高度
+        		window.setInterval(snakeMove, speed);       	//让蛇爬行 
+    		}
+    	</script>
+	    <script type="text/javascript">
+		    /*
+		     * 让蛇运动的功能，每次走一个蛇身单位
+		     */
+		    function snakeMove(){ 
+		        switch(direction){ 
+		            case 1:
+		                y = y - snakeUnitSize;
+		                break; 
+		            case 2:
+		                x = x + snakeUnitSize;
+		                break; 
+		            case 0:
+		                x = x - snakeUnitSize;
+		                break; 
+		            case 3:
+		                y = y + snakeUnitSize;
+		                break; 
+		        } 
+				
+				if(x>fieldWidth || y>fieldHeight || x<0 || y<0){ 
+            		alert("你挂了，继续努力吧!失败原因：碰壁了.....");
+            		window.location.reload(); 
+        		} 
+
+				context.fillStyle = "#006699";          //内部填充颜色 
+        		context.strokeStyle = "#006699";        //边框颜色 
+        		context.fillRect(x, y, snakeUnitSize, snakeUnitSize);  //绘制蛇节
+			}		
+    	</script>
+	    <script type="text/javascript">
+		    /*
+		     * 随机放置食物功能
+		     */
+		    function putFood(){
+		    	var size = snakeUnitSize;
+		        context.fillStyle 	= "#ff0000";              			//内部填充颜色 
+		        context.strokeStyle = "#000000";            			//边框颜色 
+		        foodX = Math.ceil(Math.random() * (fieldWidth/size));	//随机生成食物X坐标 
+		        foodY = Math.ceil(Math.random() * (fieldHeight/size));	//随机生成食物Y坐标
+		        context.fillRect(foodX*size, foodY*size, size, size);   //绘制矩形 
+		    } 
+	    </script>
+
+	</head>
+	<body>
+		<h2 align="center">Greedy Snake</h2>
+	    <div>
+		    <canvas id="field" width="400" height="600">
+		    	This is the field that snake snaking.
+		    </canvas>
+	    </div>
+	</body>
+</html>
