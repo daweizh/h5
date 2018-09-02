@@ -3,10 +3,10 @@
 1. [简介]<!-- (1.intro/index.md) -->
 2. [个人主页](2.home/index.md)
 3. [表格布局]<!-- (3.table/index.md) -->
-4. [简单绘图]<!-- (demo/4.draw/index.md) -->
-5. [交互绘图]<!-- (demo/5.circle/index.md) -->
-6. [贪吃蛇游戏](demo/6.snake/index.md)
-7. [图片展示]<!-- (demo/7.swiper/index.md) -->
+4. [简单绘图]<!-- (4.draw/index.md) -->
+5. [交互绘图]<!-- (5.circle/index.md) -->
+6. [贪吃蛇游戏](6.snake/index.md)
+7. [图片展示]<!-- (7.swiper/index.md) -->
 
 ## 微信订阅号
 
