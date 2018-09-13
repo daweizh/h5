@@ -2,51 +2,34 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>贪吃蛇</title>
+		<title>Greedy Snake</title>
 		<style type="text/css">
-	        div {
+	        div {      /*直接对div标记规定样式*/
 	            width:400px;
-	            margin:0 auto;
+	            margin:0 auto; /*上下边界为0，左右边界自适应*/
 	        }
-	        canvas {
+	        canvas {   /*直接对canvas标记规定样式*/
 	            background:#abcdef;
 	            border:1px solid #000000;
 	        }
 		</style>
 	    <script type="text/javascript">
-	    	var field;                      //定义画布
-	    	var context;                    //定义绘画环境
-	    	var fieldWidth;					//定义画布的宽度
-	    	var fieldHeight;				//定义画布的高度
-	    	var speed           = 160 ;     //蛇的速度 
-	    	var foodX   = foodY = 0;        //食物食物最开始出现的地方 
-	    	var snakeUnitSize   = 8;        //蛇身单元大小 
-	    </script>
-	    <script type="text/javascript">
-    		/*
-     		 * 打开或刷新网页时执行，只执行一次
-     		 */
+	    	var field;    //定义canvas对象变量
+	    	var game;     //field环境对象，用来执行各种绘制行为
+	    	//当所有网页内容加载完成后执行
     		window.onload = function(){
-        		field   = document.getElementById("field"); 	//得到画布
-        		context = field.getContext("2d");           	//得到画布环境
-        		fieldWidth = field.width;						//获得画布的实际宽度
-        		fieldHeight = field.height;						//获得画布的实际高度
-        		window.setInterval(putFood, speed);       		//刷屏定时器 
+    		    //获取网页中的canvas对象
+        		field   = document.getElementById("field");
+        		//得到canvas对象field所创建的绘制环境对象
+        		game = field.getContext("2d");
+        		//填充颜色
+                game.fillStyle = "#ff0000";
+                //线条颜色
+                game.strokeStyle = "#000000";
+                //填充绘制一个方块（食物）
+                game.fillRect(100, 100, 8, 8); 
     		}
     	</script>
-	    <script type="text/javascript">
-		    /*
-		     * 随机放置食物功能
-		     */
-		    function putFood(){
-		    	var size = snakeUnitSize;
-		        context.fillStyle 	= "#ff0000";              			//内部填充颜色 
-		        context.strokeStyle = "#000000";            			//边框颜色 
-		        foodX = Math.ceil(Math.random() * (fieldWidth/size));	//随机生成食物X坐标 
-		        foodY = Math.ceil(Math.random() * (fieldHeight/size));	//随机生成食物Y坐标
-		        context.fillRect(foodX*size, foodY*size, size, size);   //绘制矩形 
-		    } 
-	    </script>
 	</head>
 	<body>
 		<h2 align="center">Greedy Snake</h2>

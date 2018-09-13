@@ -1,5 +1,11 @@
 ## 6.贪吃蛇游戏
 
+1. 初始化游戏场景，在坐标(100,100)处放置大小为8x8的食物
+    -[展示](demo_snake01.html)
+    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake01.html)
+    -[注解](https://github.com/daweizh/h5/blob/master/6.snake/note_snake01.html)
+
+
 1. 初始化游戏场所并随机放置食物
     -[展示](demo_snake01.html)
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake01.html)
