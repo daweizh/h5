@@ -4,30 +4,24 @@
 		<meta charset="utf-8" />
 		<title>Greedy Snake</title>
 		<style type="text/css">
-	        div {      /*直接对div标记规定样式*/
+	        div {  /*直接对div标记规定样式*/
 	            width:400px;
-	            margin:0 auto; /*上下边界为0，左右边界自适应*/
+	            margin:0 auto;  /*上下边界为0，左右边界自适应*/
 	        }
-	        canvas {   /*直接对canvas标记规定样式*/
+	        canvas {  /*直接对canvas标记规定样式*/
 	            background:#abcdef;
 	            border:1px solid #000000;
 	        }
 		</style>
 	    <script type="text/javascript">
-	    	var field;    //定义canvas对象变量
-	    	var game;     //field环境对象，用来执行各种绘制行为
-	    	//当所有网页内容加载完成后执行
-    		window.onload = function(){
-    		    //获取网页中的canvas对象
-        		field   = document.getElementById("field");
-        		//得到canvas对象field所创建的绘制环境对象
-        		game = field.getContext("2d");
-        		//填充颜色
-                game.fillStyle = "#ff0000";
-                //线条颜色
-                game.strokeStyle = "#000000";
-                //填充绘制一个方块（食物）
-                game.fillRect(100, 100, 8, 8); 
+	    	var field;  //定义canvas对象变量
+	    	var game;  //field环境对象，用来执行各种绘制行为
+    		window.onload = function(){  //当所有网页内容加载完成后执行
+        		field   = document.getElementById("field");  //获取网页中的canvas对象
+        		game = field.getContext("2d");  //得到canvas对象field所创建的绘制环境对象
+                game.fillStyle = "#ff0000";  //填充颜色
+                game.strokeStyle = "#000000";  //线条颜色
+                game.fillRect(100, 100, 8, 8);  //填充绘制一个方块（食物）
     		}
     	</script>
 	</head>
