@@ -4,12 +4,7 @@
     -[展示](demo_snake01.html)
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake01.html)
     -[注解](https://github.com/daweizh/h5/blob/master/6.snake/note_snake01.html)
-1. 计算游戏场景的初始化游戏场所并随机放置食物
-    -[展示](demo_snake01.html)
-    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake01.html)
-    -[注解](https://github.com/daweizh/h5/blob/master/6.snake/note_snake01.html)
-
-2. 蛇头移动并判断碰壁
+2. 让食物动起来，间隔speed时间后putFood，食物逐渐填满屏幕
     -[展示](demo_snake02.html)
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake02.html)
     -[注解](https://github.com/daweizh/h5/blob/master/6.snake/note_snake02.html)
@@ -37,6 +32,13 @@
     -[展示](demo_snake08.html)
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake08.html)
     -[注解](https://github.com/daweizh/h5/blob/master/6.snake/note_snake08.html)
+
+<!--
+9. 蛇头移动并判断碰壁
+    -[展示](demo_snake09.html)
+    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake09.html)
+    -[注解](https://github.com/daweizh/h5/blob/master/6.snake/note_snake09.html)
+-->
 
 ## w.微信订阅号
 
