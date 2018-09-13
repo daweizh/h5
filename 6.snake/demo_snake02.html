@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Greedy Snake</title>
+        <style type="text/css">
+            div {
+                width:400px;
+                margin:0 auto;
+            }
+            canvas {
+                background:#abcdef;
+                border:1px solid #000000;
+            }
+        </style>
+        <script type="text/javascript">
+            var field;
+            var game;
+            var fieldWidth;
+            var fieldHeight;
+            var speed = 160;
+            var foodX = foodY = 0;
+            var snakeUnitSize = 8;
+
+            window.onload = function(){
+                field = document.getElementById("field");
+                game = field.getContext("2d");
+                //game.fillStyle = "#ff0000"; 
+                //game.strokeStyle = "#000000"; 
+                //game.fillRect(100, 100, 8, 8); 
+                fieldWidth = field.width;
+                fieldHeight = field.height;
+                window.setInterval(putFood, speed); 
+            }
+            
+            function putFood(){
+                var size = snakeUnitSize;
+                var grids = fieldWidth / size;
+                game.fillStyle = "#ff0000";
+                game.strokeStyle = "#000000";
+                foodX = Math.ceil(Math.random() * (grids));
+                foodY = Math.ceil(Math.random() * (grids));
+                game.fillRect(foodX*size, foodY*size, size, size);
+            } 
+        </script>
+    </head>
+    <body>
+        <h2 align="center">Greedy Snake</h2>
+        <div>
+            <canvas id="field" width="400" height="600">
+                This is the field that snake snaking.
+            </canvas>
+        </div>
+    </body>
+</html>
