@@ -42,15 +42,16 @@
              */
             function putFood(){
                 var size = snakeUnitSize;  //得到食物的大小
-                var grids = fieldWidth / size;  //计算机游戏场景的网格数
                 game.fillStyle = "#ff0000";  //设置食物内部颜色
                 game.strokeStyle = "#000000";  //设置食物边框颜色
                 /* 
                  * Math.ceil小数向上取证，如10.1得到11
                  * Math.random()得到0.0~1.0之间的一个伪随机数。
+                 * fieldWidth/size计算横向网格数
+                 * fieldHeight/size计算纵向网格数
                  */
-                foodX = Math.ceil(Math.random() * (grids));  //计算x坐标
-                foodY = Math.ceil(Math.random() * (grids));  //计算y坐标
+                foodX = Math.ceil(Math.random() * (fieldWidth/size));  //计算x坐标
+                foodY = Math.ceil(Math.random() * (fieldHeight/size));  //计算y坐标
                 game.fillRect(foodX*size, foodY*size, size, size);  //填充绘制食物
             } 
 

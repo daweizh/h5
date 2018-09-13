@@ -4,12 +4,11 @@
     -[展示](demo_snake01.html)
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake01.html)
     -[注解](https://github.com/daweizh/h5/blob/master/6.snake/note_snake01.html)
-
-
-1. 初始化游戏场所并随机放置食物
+1. 计算游戏场景的初始化游戏场所并随机放置食物
     -[展示](demo_snake01.html)
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake01.html)
     -[注解](https://github.com/daweizh/h5/blob/master/6.snake/note_snake01.html)
+
 2. 蛇头移动并判断碰壁
     -[展示](demo_snake02.html)
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake02.html)

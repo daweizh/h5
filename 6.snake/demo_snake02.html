@@ -35,11 +35,10 @@
             
             function putFood(){
                 var size = snakeUnitSize;
-                var grids = fieldWidth / size;
                 game.fillStyle = "#ff0000";
                 game.strokeStyle = "#000000";
-                foodX = Math.ceil(Math.random() * (grids));
-                foodY = Math.ceil(Math.random() * (grids));
+                foodX = Math.ceil(Math.random() * (fieldWidth/size));
+                foodY = Math.ceil(Math.random() * (fieldHeight/size));
                 game.fillRect(foodX*size, foodY*size, size, size);
             } 
         </script>
