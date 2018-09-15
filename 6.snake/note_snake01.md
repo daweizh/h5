@@ -1,0 +1,54 @@
+## 1. 贪吃蛇版本迭代（V1） 
+
+- 初始化游戏场景
+- 在坐标(100,100)处放置大小为8x8的食物
+
+~~~
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Greedy Snake</title>
+        <style type="text/css">
+            /*直接对div标记规定样式*/
+            div {
+                width:400px;
+                /*上下边界为0，左右边界自适应*/
+                margin:0 auto;  
+            }
+            /*直接对canvas标记规定样式*/
+            canvas {
+                background:#abcdef;
+                border:1px solid #000000;
+            }
+        </style>
+        <script type="text/javascript">
+            /*定义canvas对象变量*/
+            var field;
+            /*field环境对象，用来执行各种绘制行为*/
+            var game;
+            /*当所有网页内容加载完成后执行*/
+            window.onload = function(){
+                /*获取网页中的canvas对象*/
+                field = document.getElementById("field");
+                /*得到canvas对象field所创建的绘制环境对象*/
+                game = field.getContext("2d");
+                /*填充颜色，红色*/
+                game.fillStyle = "#ff0000";
+                /*线条颜色*/
+                game.strokeStyle = "#000000";
+                /*填充绘制一个方块（食物）*/
+                game.fillRect(100, 100, 8, 8);
+            }
+        </script>
+    </head>
+    <body>
+        <h2 align="center">Greedy Snake</h2>
+        <div>
+            <canvas id="field" width="400" height="600">
+                This is the field that snake snaking.
+            </canvas>
+        </div>
+    </body>
+</html>
+~~~
