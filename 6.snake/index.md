@@ -4,10 +4,10 @@
     -[展示](ver01/snake.html)
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/ver01/snake.html)
     -[注解](ver01/)
-2. 让食物动起来，间隔speed时间后putFood，食物逐渐填满屏幕
-    -[展示](demo_snake02.html)
-    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake02.html)
-    -[注解](https://github.com/daweizh/h5/blob/master/6.snake/note_snake02.html)
+2. 让食物动起来，speed时间间隔后putFood
+    -[展示](ver02/snake.html)
+    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/ver02/snake.html)
+    -[注解](ver02/)
 <!--
 3. 判断移动方向
     -[展示](demo_snake03.html)
