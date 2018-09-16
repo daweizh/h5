@@ -33,8 +33,6 @@
     -[展示](demo_snake08.html)
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake08.html)
     -[注解](https://github.com/daweizh/h5/blob/master/6.snake/note_snake08.html)
--->
-<!--
 9. 蛇头移动并判断碰壁
     -[展示](demo_snake09.html)
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake09.html)
