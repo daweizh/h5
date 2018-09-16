@@ -1,9 +1,9 @@
 ## 6.贪吃蛇游戏
 
 1. 初始化游戏场景，在坐标(100,100)处放置大小为8x8的食物
-    -[展示](demo_snake01.html)
-    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake01.html)
-    -[注解](note_snake01.html)
+    -[展示](ver01/snake.html)
+    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/ver01/snake.html)
+    -[注解](ver01/)
 2. 让食物动起来，间隔speed时间后putFood，食物逐渐填满屏幕
     -[展示](demo_snake02.html)
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake02.html)
