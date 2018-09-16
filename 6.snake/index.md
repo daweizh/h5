@@ -8,6 +8,7 @@
     -[展示](ver02/snake.html)
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/ver02/snake.html)
     -[注解](ver02/)
+
 <!--
 3. 判断移动方向
     -[展示](demo_snake03.html)
