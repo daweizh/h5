@@ -18,7 +18,7 @@
 ## 2.3 编程过程
 
 1. 增加全局变量
-    ~~~html
+    ~~~js
     var fieldWidth;
     var fieldHeight;
     var speed = 160;
@@ -26,19 +26,19 @@
     var snakeUnitSize = 8;
     ~~~
 2. 在window.onload中删除代码
-    ~~~html
+    ~~~js
     game.fillStyle = "#ff0000";
     game.strokeStyle = "#000000";
     game.fillRect(100, 100, 8, 8);
     ~~~
 3. 在window.onload中增加代码
-	~~~html
+	~~~js
     fieldWidth = field.width;
     fieldHeight = field.height;
     window.setInterval(putFood, speed);
 	~~~
 4. 增加投放食物功能
-	~~~html
+	~~~js
     function putFood(){
         var size = snakeUnitSize;
         game.fillStyle = "#ff0000";
@@ -51,7 +51,7 @@
 
 ## 2.4 代码注解
 
-~~~html
+~~~js
 <script type="text/javascript">
     //游戏场景宽度
     var fieldWidth;
