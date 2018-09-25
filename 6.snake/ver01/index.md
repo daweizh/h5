@@ -24,7 +24,7 @@
 	<h2 align="center">Greedy Snake</h2>
 	~~~
 3. 增加游戏场景
-	~~~
+	~~~html
     <div>
         <canvas id="field" width="400" height="600">
             This is the field that snake snaking.
@@ -32,7 +32,7 @@
     </div>
 	~~~
 4. 改变场景样式
-	~~~
+	~~~html
     <style type="text/css">
         div {
             width:400px;
@@ -45,7 +45,7 @@
     </style>
 	~~~
 5. 绘制食物
-	~~~
+	~~~html
     <script type="text/javascript">
         var field;
         var game;
@@ -61,7 +61,7 @@
 
 ## 1.4 代码注解
 
-~~~
+~~~html
 <!DOCTYPE html>
 <html>
     <head>
@@ -116,7 +116,7 @@
 
 ## 1.5 核心代码
 
-~~~
+~~~html
 <!DOCTYPE html>
 <html>
     <head>
@@ -167,5 +167,7 @@
 
 ----------
 
-## b.[返回首页](../../)
+## b.[返回](../)
+
+## t.[首页](../../)
 
