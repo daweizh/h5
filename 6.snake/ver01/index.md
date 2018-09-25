@@ -125,7 +125,7 @@
         <style type="text/css">
             div {
                 width:400px;
-                margin:0 auto;
+                margin:0 auto;  
             }
             canvas {
                 background:#abcdef;
@@ -138,9 +138,9 @@
             window.onload = function(){
                 field = document.getElementById("field");
                 game = field.getContext("2d");
-                game.fillStyle = "#ff0000"; 
-                game.strokeStyle = "#000000"; 
-                game.fillRect(100, 100, 8, 8); 
+                game.fillStyle = "#ff0000";
+                game.strokeStyle = "#000000";
+                game.fillRect(100, 100, 8, 8);
             }
         </script>
     </head>
