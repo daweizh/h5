@@ -28,17 +28,18 @@
     -[展示](ver07/snake.html)
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/ver07/snake.html)
     -[注解](ver07/)
-
-<!--
-8. 显示游戏状态
-    -[展示](demo_snake08.html)
-    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake08.html)
-    -[注解](https://github.com/daweizh/h5/blob/master/6.snake/note_snake08.html)
-9. 蛇头移动并判断碰壁
-    -[展示](demo_snake09.html)
-    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake09.html)
-    -[注解](https://github.com/daweizh/h5/blob/master/6.snake/note_snake09.html)
--->
+8. 放置食物并捕食
+    -[展示](ver08/snake.html)
+    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/ver08/snake.html)
+    -[注解](ver08/)
+9. 显示游戏状态
+    -[展示](ver09/snake.html)
+    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/ver09/snake.html)
+    -[注解](ver09/)
+10. 增加功能键
+    -[展示](ver10/snake.html)
+    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/ver10/snake.html)
+    -[注解](ver10/)
 
 ## w.微信订阅号
 
