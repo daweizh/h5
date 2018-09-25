@@ -4,18 +4,18 @@
         <meta charset="utf-8" />
         <title>Greedy Snake</title>
         <style type="text/css">
-            div {
+            div {   /*v1*/
                 width:400px;
                 margin:0 auto;  
             }
-            canvas {
+            canvas {    /*v1*/
                 background:#abcdef;
                 border:1px solid #000000;
             }
         </style>
         <script type="text/javascript">
-            var field;
-            var game;
+            var field; //v1
+            var game;  //v1
             //游戏场景宽度
             var fieldWidth;
             //游戏场景高度
@@ -27,12 +27,12 @@
             //蛇节的大小，也是食物的大小
             var snakeUnitSize = 8;
             
-            window.onload = function(){
-                field = document.getElementById("field");
-                game = field.getContext("2d");
-                //game.fillStyle = "#ff0000";
-                //game.strokeStyle = "#000000";
-                //game.fillRect(100, 100, 8, 8);
+            window.onload = function(){ //v1
+                field = document.getElementById("field"); //v1
+                game = field.getContext("2d"); //v1
+                //game.fillStyle = "#ff0000"; //v1
+                //game.strokeStyle = "#000000"; //v1
+                //game.fillRect(100, 100, 8, 8); //v1
                 //得到游戏场景的宽度
                 fieldWidth = field.width;
                 //得到游戏场景的高度
@@ -65,8 +65,11 @@
         </script>
     </head>
     <body>
+        <!-- v1 -->
         <h2 align="center">Greedy Snake</h2>
+        <!-- v1 -->
         <div>
+            <!-- v1 -->
             <canvas id="field" width="400" height="600">
                 This is the field that snake snaking.
             </canvas>

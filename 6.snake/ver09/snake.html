@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Greedy Snake</title>
+        <style type="text/css">
+            canvas { /*v1*/
+                background:#abcdef;
+                border:1px solid #000000;
+            }
+            /*消息板样式*/
+            .show{
+                font-family: "微软雅黑";
+                font-size: large;
+                font-weight: bold;
+            }
+        </style>
+        <script type="text/javascript">
+            var field; //v1
+            var game; //v1
+            var fieldWidth; //v2
+            var fieldHeight; //v2
+            var speed = 160; //v2
+            var foodX = foodY = 0; //v2
+            var snakeUnitSize = 8; //v2
+            var x = y = snakeUnitSize; //v3
+            var direction = 3; //v4
+            var snakeLength = 20; //v6
+            var pathMap = []; //v6
+            //吃到食物的数量
+            var foodNumber = -1;
+            //蛇走了多少步
+            var walkSteps = 0;
+            //捕食数量消息栏
+            var foods;
+            //蛇长消息栏
+            var snakes;
+            //食物位置消息栏
+            var foodPlace;
+            //蛇头位置消息栏
+            var snakePlace;
+            //蛇行步数消息栏
+            var steps;
+            
+            window.onload = function(){ //v1
+                //获取捕食数量消息栏
+                foods = document.getElementById("foods");
+                //获取蛇长消息栏
+                snakes = document.getElementById("snakes");
+                //获取蛇行步数消息栏
+                steps = document.getElementById("steps");
+                //获取食物位置消息栏
+                foodPlace = document.getElementById("foodPlace");
+                //获取蛇头位置消息栏
+                snakePlace = document.getElementById("snakePlace");
+
+                field = document.getElementById("field"); //v1
+                game = field.getContext("2d"); //v1
+                fieldWidth = field.width; //v2
+                fieldHeight = field.height; //v2
+
+                putFood(); //v8
+
+                window.setInterval(snakeMove, speed); //v3
+            }
+
+            document.onkeydown = function(e) { //v5
+                var code = e.keyCode - 37; //v5
+                
+                switch(code){ //v5
+                    case 0 : //按向左键
+                        direction = 0;
+                        break; 
+                    case 1 : //按向上键
+                        direction = 1;
+                        break; 
+                    case 2 : //按向右键
+                        direction = 2;
+                        break; 
+                    case 3 : //按向下键
+                        direction = 3;
+                        break; 
+                } 
+            } 
+
+            function snakeMove(){ //v3
+                switch(direction){ //v4 
+                    case 0: //向左走
+                        x = x - snakeUnitSize;
+                        break; 
+                    case 1: //向上走
+                        y = y - snakeUnitSize;
+                        break; 
+                    case 2: //向右走
+                        x = x + snakeUnitSize;
+                        break; 
+                    case 3: //向下走
+                        y = y + snakeUnitSize;
+                        break; 
+                } 
+
+                if(x>fieldWidth || y>fieldHeight || x<0 || y<0){ //v4
+                    alert("你挂了，继续努力吧!失败原因：碰壁了....."); //v4
+                    window.location.reload(); //v4
+                }
+                
+                for(var i=0; i<pathMap.length; i++){ //v7
+                    if( parseInt(pathMap[i].x)==x && parseInt(pathMap[i].y)==y){ //v7
+                        alert("你挂了，继续努力吧！失败原因：撞到自己了....."); //v7
+                        window.location.reload(); //v7
+                    } 
+                } 
+
+                if (pathMap.length>snakeLength) {  //v6
+                    var snakeTail = pathMap.shift(); //v6
+                    game.clearRect(snakeTail['x'], snakeTail['y'], snakeUnitSize, snakeUnitSize); //v6
+                }
+                pathMap.push({'x':x,'y':y}); //v6
+                
+                game.fillStyle = "#006699"; //v3
+                game.strokeStyle = "#006699"; //v3
+                game.fillRect(x, y, snakeUnitSize, snakeUnitSize); //v3
+
+                if((foodX*snakeUnitSize)==x && (foodY*snakeUnitSize)==y){ //v8
+                    snakeLength++; //v8
+                    putFood(); //v8
+                }
+                
+                //蛇行步数加1
+                walkSteps = walkSteps + 1;
+                //刷新消息板
+                dispMessage();
+            }       
+
+            function putFood(){ //v2
+                var size = snakeUnitSize; //v2
+                game.fillStyle = "#ff0000"; //v2
+                game.strokeStyle = "#000000"; //v2
+                foodX = Math.ceil(Math.random() * (fieldWidth/size)); //v2
+                if(foodX*size>fieldWidth-size) //v8
+                    foodX = foodX - 1; //v8
+                foodY = Math.ceil(Math.random() * (fieldHeight/size)); //v2
+                if(foodY*size>fieldHeight-size) //v8
+                    foodY = foodY - 1; //v8
+                game.fillRect(foodX*size, foodY*size, size, size); //v2
+                //捕食数量计数
+                foodNumber = foodNumber + 1;
+                //每次捕食后，蛇行步数重新计数
+                walkSteps = 0;
+
+            }
+            /*
+             * 显示游戏状态信息
+             */
+            function dispMessage(){
+                //显示捕食数量
+                foods.innerHTML = foodNumber;
+                //显示蛇身长度
+                snakes.innerHTML = snakeLength;
+                //显示蛇行步数
+                steps.innerHTML = walkSteps;
+                //显示食物位置
+                foodPlace.innerHTML = "(" + foodX*snakeUnitSize + "," + foodY*snakeUnitSize + ")";
+                //显示蛇头位置
+                snakePlace.innerHTML = "(" + x + "," + y + ")";
+            }
+
+        </script>
+    </head>
+    <body>
+        <center>
+            <h2>Greedy Snake</h2>
+            <table>
+                <tr>
+                    <td>
+                        <canvas id="field" width="400" height="600">
+                            This is the field that snake snaking.
+                        </canvas>
+                    </td>
+                    <td valign="top" align="left">
+                        <table class="show">
+                            <tr>
+                                <td align="right">贪吃蛇长度：</td>
+                                <td align="left" id="snakes">35</td>
+                            </tr>
+                            <tr>
+                                <td align="right">捕食数量：</td>
+                                <td align="left" id="foods">14</td>
+                            </tr>
+                            <tr>
+                                <td align="right">行走步数：</td>
+                                <td align="left" id="steps">1000</td>
+                            </tr>
+                            <tr>
+                                <td align="right">食物位置：</td>
+                                <td align="left" id="foodPlace">14</td>
+                            </tr>
+                            <tr>
+                                <td align="right">蛇头位置：</td>
+                                <td align="left" id="snakePlace">1000</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </body>
+</html>

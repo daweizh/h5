@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Greedy Snake</title>
+        <style type="text/css">
+            div { /*v1*/
+                width:400px;
+                margin:0 auto;  
+            }
+            canvas { /*v1*/
+                background:#abcdef;
+                border:1px solid #000000;
+            }
+        </style>
+        <script type="text/javascript">
+            var field; //v1
+            var game; //v1
+            var fieldWidth; //v2
+            var fieldHeight; //v2
+            var speed = 160; //v2
+            var foodX = foodY = 0; //v2
+            var snakeUnitSize = 8; //v2
+            var x = y = snakeUnitSize; //v3
+            //蛇行的方向：1向上; 2向右; 0向左;  3向下 
+            var direction = 3;
+
+            window.onload = function(){ //v1
+                field = document.getElementById("field"); //v1
+                game = field.getContext("2d"); //v1
+                fieldWidth = field.width; //v2
+                fieldHeight = field.height; //v2
+                window.setInterval(snakeMove, speed); //v3
+            }
+
+            function snakeMove(){ //v3
+                //x = x + snakeUnitSize; //v3
+                
+                //根据direction值决定行走方向
+                switch(direction){ 
+                    case 0: //向左走
+                        x = x - snakeUnitSize;
+                        break; 
+                    case 1: //向上走
+                        y = y - snakeUnitSize;
+                        break; 
+                    case 2: //向右走
+                        x = x + snakeUnitSize;
+                        break; 
+                    case 3: //向下走
+                        y = y + snakeUnitSize;
+                        break; 
+                } 
+
+                //判断是否超越了边界
+                if(x>fieldWidth || y>fieldHeight || x<0 || y<0){
+                    //如果已经超越边界了，就警告你已经越界了
+                    alert("你挂了，继续努力吧!失败原因：碰壁了.....");
+                    //然后让整个网页重新加载，恢复初始状态，重新开始
+                    window.location.reload(); 
+                }
+                
+                game.fillStyle = "#006699"; //v3
+                game.strokeStyle = "#006699"; //v3
+                game.fillRect(x, y, snakeUnitSize, snakeUnitSize); //v3
+            }       
+
+            function putFood(){ //v2
+                var size = snakeUnitSize; //v2
+                game.fillStyle = "#ff0000"; //v2
+                game.strokeStyle = "#000000"; //v2
+                foodX = Math.ceil(Math.random() * (fieldWidth/size)); //v2
+                foodY = Math.ceil(Math.random() * (fieldHeight/size)); //v2
+                game.fillRect(foodX*size, foodY*size, size, size); //v2
+            } 
+        </script>
+    </head>
+    <body>
+        <!-- v1 -->
+        <h2 align="center">Greedy Snake</h2>
+        <!-- v1 -->
+        <div>
+            <!-- v1 -->
+            <canvas id="field" width="400" height="600">
+                This is the field that snake snaking.
+            </canvas>
+        </div>
+    </body>
+</html>
