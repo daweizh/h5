@@ -16,11 +16,11 @@
 ## 1.3 编程过程
 
 1. 修改网页标题
-    ~~~
+    ~~~html
     <title>Greedy Snake</title>
     ~~~
 2. 增加游戏标题
-	~~~
+	~~~html
 	<h2 align="center">Greedy Snake</h2>
 	~~~
 3. 增加游戏场景
