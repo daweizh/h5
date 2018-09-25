@@ -118,12 +118,14 @@
                     window.location.reload(); //v4
                 }
                 
-                for(var i=0; i<pathMap.length; i++){ //v7
-                    if( parseInt(pathMap[i].x)==x && parseInt(pathMap[i].y)==y){ //v7
-                        alert("你挂了，继续努力吧！失败原因：撞到自己了....."); //v7
-                        window.location.reload(); //v7
+                if(power==0){
+                    for(var i=0; i<pathMap.length; i++){ //v7
+                        if( parseInt(pathMap[i].x)==x && parseInt(pathMap[i].y)==y){ //v7
+                            alert("你挂了，继续努力吧！失败原因：撞到自己了....."); //v7
+                            window.location.reload(); //v7
+                        } 
                     } 
-                } 
+                }
 
                 if (pathMap.length>snakeLength) {  //v6
                     var snakeTail = pathMap.shift(); //v6
@@ -213,7 +215,7 @@
                                     <li>每捕捉到一个食物，蛇身长长一节</li>
                                     <li>a键减慢蛇行速度</li>
                                     <li>d键加快蛇行速度</li>
-                                    <li>w键标注线开关</li>
+                                    <li>w键标注线和自身缠绕开关</li>
                                 </ol>
                             </td></tr>
                         </table>
