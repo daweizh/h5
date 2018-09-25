@@ -20,16 +20,16 @@
     -[展示](ver05/snake.html)
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/ver05/snake.html)
     -[注解](ver05/)
+6. 在蛇行中保持蛇身长度不变
+    -[展示](ver06/snake.html)
+    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/ver06/snake.html)
+    -[注解](ver06/)
+7. 判断蛇身是否缠绕
+    -[展示](ver07/snake.html)
+    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/ver07/snake.html)
+    -[注解](ver07/)
 
 <!--
-6. 判断蛇身缠绕
-    -[展示](demo_snake06.html)
-    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake06.html)
-    -[注解](https://github.com/daweizh/h5/blob/master/6.snake/note_snake06.html)
-7. 捕食长长
-    -[展示](demo_snake07.html)
-    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake07.html)
-    -[注解](https://github.com/daweizh/h5/blob/master/6.snake/note_snake07.html)
 8. 显示游戏状态
     -[展示](demo_snake08.html)
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake08.html)
