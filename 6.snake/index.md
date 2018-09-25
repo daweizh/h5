@@ -4,20 +4,20 @@
     -[展示](ver01/snake.html)
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/ver01/snake.html)
     -[注解](ver01/)
-2. 让食物动起来，speed时间间隔后putFood
+2. 让食物动起来，speed时间间隔后putFood随机投放食物
     -[展示](ver02/snake.html)
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/ver02/snake.html)
     -[注解](ver02/)
+3. 按水平方向伸展蛇身
+    -[展示](ver03/snake.html)
+    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/ver03/snake.html)
+    -[注解](ver03/)
+4. 按上下左右键改变蛇身延展方向
+    -[展示](ver04/snake.html)
+    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/ver04/snake.html)
+    -[注解](ver04/)
 
 <!--
-3. 判断移动方向
-    -[展示](demo_snake03.html)
-    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake03.html)
-    -[注解](https://github.com/daweizh/h5/blob/master/6.snake/note_snake03.html)
-4. 通过方向键改变行走方向
-    -[展示](demo_snake04.html)
-    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake04.html)
-    -[注解](https://github.com/daweizh/h5/blob/master/6.snake/note_snake04.html)
 5. 整条蛇移动
     -[展示](demo_snake05.html)
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake05.html)
