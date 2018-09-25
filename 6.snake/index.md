@@ -12,16 +12,16 @@
     -[展示](ver03/snake.html)
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/ver03/snake.html)
     -[注解](ver03/)
-4. 按上下左右键改变蛇身延展方向
+4. 设定蛇身延展方向，判断是否越界
     -[展示](ver04/snake.html)
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/ver04/snake.html)
     -[注解](ver04/)
+5. 通过上下左右键改变蛇身延展方向
+    -[展示](ver05/snake.html)
+    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/ver05/snake.html)
+    -[注解](ver05/)
 
 <!--
-5. 整条蛇移动
-    -[展示](demo_snake05.html)
-    -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake05.html)
-    -[注解](https://github.com/daweizh/h5/blob/master/6.snake/note_snake05.html)
 6. 判断蛇身缠绕
     -[展示](demo_snake06.html)
     -[代码](https://github.com/daweizh/h5/blob/master/6.snake/demo_snake06.html)
