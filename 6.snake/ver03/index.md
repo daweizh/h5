@@ -16,19 +16,19 @@
 ## 3.3 编程过程
 
 1. 增加蛇头坐标全局变量
-    ~~~
+    ~~~js
     var x = y = snakeUnitSize;
     ~~~
 2. 在window.onload中，修改代码
-	~~~
+	~~~js
     window.setInterval(putFood, speed);
 	~~~
 	为
-	~~~
+	~~~js
 	window.setInterval(snakeMove, speed);
 	~~~
 3. 增加蛇头水平向右行走代码
-	~~~
+	~~~js
     function snakeMove(){
         x = x + snakeUnitSize;
         game.fillStyle = "#006699";
@@ -39,7 +39,7 @@
 
 ## 3.4 代码注解
 
-~~~
+~~~js
 <script type="text/javascript">
     // v1 ... v2
     //蛇最开始出没的地方

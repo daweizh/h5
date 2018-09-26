@@ -51,7 +51,7 @@
 
 ## 2.4 代码注解
 
-~~~
+~~~js
 <script type="text/javascript">
     //游戏场景宽度
     var fieldWidth; //v2
