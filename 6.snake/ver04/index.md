@@ -1,75 +1,94 @@
-# 3. 贪吃蛇版本迭代（V3） 
+# 4. 贪吃蛇版本迭代（V4） 
 
 - 张大为
 - 辽宁师范大学计算机与信息技术学院@大连
 - [https://daweizh.github.io/h5/](https://daweizh.github.io/h5/)  QQ:1243605845
 
-## 3.1 需求说明
+## 4.1 需求说明
 
-- 初始化蛇头开始出没的位置坐标(x,y)，默认值为snakeUnitSize
+- 增加蛇行方向变量direction
 - 让蛇动起来，间隔speed（默认值160ms）后，snakeMove蛇头前进一步
 
-## 3.2 效果设计
+## 4.2 效果设计
 
 ![效果图](demo.png)
 
-## 3.3 编程过程
+## 4.3 编程过程
 
-1. 增加蛇头坐标全局变量
+1. 增加蛇行方向变量
     ~~~js
-    var x = y = snakeUnitSize;
+    var direction = 3;
     ~~~
-2. 在window.onload中，修改代码
+2. 在snakeMove()中，修改代码
 	~~~js
-    window.setInterval(putFood, speed);
+    x = x + snakeUnitSize;
 	~~~
 	为
 	~~~js
-	window.setInterval(snakeMove, speed);
+    switch(direction){ 
+        case 0:
+            x = x - snakeUnitSize;
+            break; 
+        case 1:
+            y = y - snakeUnitSize;
+            break; 
+        case 2:
+            x = x + snakeUnitSize;
+            break; 
+        case 3:
+            y = y + snakeUnitSize;
+            break; 
+    } 
 	~~~
-3. 增加蛇头水平向右行走代码
+3. 增加判断蛇行越界代码
 	~~~js
-    function snakeMove(){
-        x = x + snakeUnitSize;
-        game.fillStyle = "#006699";
-        game.strokeStyle = "#006699"; 
-        game.fillRect(x, y, snakeUnitSize, snakeUnitSize);
-    }       
+    if(x>fieldWidth || y>fieldHeight || x<0 || y<0){
+        alert("你挂了，继续努力吧!失败原因：碰壁了.....");
+        window.location.reload(); 
+    }
 	~~~
 
-## 3.4 代码注解
+## 4.4 代码注解
 
 ~~~js
 <script type="text/javascript">
-    // v1 ... v2
-    //蛇最开始出没的地方
-    var x = y = snakeUnitSize; //v3
+    //v1 ... v3
+    //蛇行的方向：1向上; 2向右; 0向左;  3向下 
+    var direction = 3; //v4
 
-    window.onload = function(){ //v1
-        //v1 ... v2
-        //window.setInterval(putFood, speed); //v2
-        //固定时间间隔执行，每隔speed毫秒执行snakeMove功能
-        window.setInterval(snakeMove, speed); //v3
-    }
-
-    /*
-     * 让蛇运动的功能，每次走一个蛇身单位
-     */
     function snakeMove(){ //v3
-        //每次水平方向移动一个蛇节
-        x = x + snakeUnitSize; //v3
-        //内部填充颜色
-        game.fillStyle = "#006699"; //v3
-        //边框颜色
-        game.strokeStyle = "#006699"; //v3
-        //根据新得到的蛇头绘制位置，绘制蛇头
-        game.fillRect(x, y, snakeUnitSize, snakeUnitSize); //v3
-    }       
+        //x = x + snakeUnitSize; //v3
+        
+        //根据direction值决定行走方向
+        switch(direction){ //v4 
+            case 0: //向左走
+                x = x - snakeUnitSize; //v4
+                break; 
+            case 1: //向上走
+                y = y - snakeUnitSize; //v4
+                break; 
+            case 2: //向右走
+                x = x + snakeUnitSize; //v4
+                break; 
+            case 3: //向下走
+                y = y + snakeUnitSize; //v4
+                break; 
+        } 
 
+        //判断是否超越了边界
+        if(x>fieldWidth || y>fieldHeight || x<0 || y<0){ //v4
+            //如果已经超越边界了，就警告你已经越界了
+            alert("你挂了，继续努力吧!失败原因：碰壁了....."); //v4
+            //然后让整个网页重新加载，恢复初始状态，重新开始
+            window.location.reload(); //v4
+        }
+        
+        //v1 ... /v3
+    }       
 </script>
 ~~~
 
-## 3.5 核心代码
+## 4.5 核心代码
 
 ~~~
 <!DOCTYPE html>
@@ -96,6 +115,7 @@
             var foodX = foodY = 0; //v2
             var snakeUnitSize = 8; //v2
             var x = y = snakeUnitSize; //v3
+            var direction = 3; //v4
 
             window.onload = function(){ //v1
                 field = document.getElementById("field"); //v1
@@ -106,7 +126,26 @@
             }
 
             function snakeMove(){ //v3
-                x = x + snakeUnitSize; //v3
+                switch(direction){ //v4
+                    case 0: //向左走
+                        x = x - snakeUnitSize; //v4
+                        break; 
+                    case 1: //向上走
+                        y = y - snakeUnitSize; //v4
+                        break; 
+                    case 2: //向右走
+                        x = x + snakeUnitSize; //v4
+                        break; 
+                    case 3: //向下走
+                        y = y + snakeUnitSize; //v4
+                        break; 
+                } 
+
+                if(x>fieldWidth || y>fieldHeight || x<0 || y<0){ //v4
+                    alert("你挂了，继续努力吧!失败原因：碰壁了....."); //v4
+                    window.location.reload(); //v4
+                }
+                
                 game.fillStyle = "#006699"; //v3
                 game.strokeStyle = "#006699"; //v3
                 game.fillRect(x, y, snakeUnitSize, snakeUnitSize); //v3
@@ -151,4 +190,3 @@
 ## b.[返回](../)
 
 ## h.[首页](../../)
-
