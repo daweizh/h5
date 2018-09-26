@@ -54,25 +54,25 @@
 ~~~js
 <script type="text/javascript">
     //游戏场景宽度
-    var fieldWidth;
+    var fieldWidth; //v2
     //游戏场景高度
-    var fieldHeight;
+    var fieldHeight; //v2
     //蛇行走的速度
-    var speed = 160;
+    var speed = 160; //v2
     //食物的最初位置
-    var foodX = foodY = 0;
+    var foodX = foodY = 0; //v2
     //蛇节的大小，也是食物的大小
-    var snakeUnitSize = 8;
+    var snakeUnitSize = 8; //v2
     
     window.onload = function(){ //v1
         field = document.getElementById("field"); //v1
         game = field.getContext("2d"); //v1
         //得到游戏场景的宽度
-        fieldWidth = field.width;
+        fieldWidth = field.width; //v2
         //得到游戏场景的高度
-        fieldHeight = field.height;
+        fieldHeight = field.height; //v2
         //固定时间间隔执行，每隔speed毫秒执行putFood功能
-        window.setInterval(putFood, speed);
+        window.setInterval(putFood, speed); //v2
     }
 
     /* 
@@ -82,19 +82,19 @@
      * fieldWidth/size计算横向网格数
      * fieldHeight/size计算纵向网格数
      */
-    function putFood(){
+    function putFood(){ //v2
         //得到食物的大小
-        var size = snakeUnitSize;
+        var size = snakeUnitSize; //v2
         //设置食物内部颜色
-        game.fillStyle = "#ff0000";
+        game.fillStyle = "#ff0000"; //v2
         //设置食物边框颜色
-        game.strokeStyle = "#000000";
+        game.strokeStyle = "#000000"; //v2
         //计算食物在场景网格的x坐标
-        foodX = Math.ceil(Math.random() * (fieldWidth/size));
+        foodX = Math.ceil(Math.random() * (fieldWidth/size)); //v2
         //计算食物在场景网格的y坐标
-        foodY = Math.ceil(Math.random() * (fieldHeight/size));
+        foodY = Math.ceil(Math.random() * (fieldHeight/size)); //v2
         //计算食物的具体坐标，绘制食物
-        game.fillRect(foodX*size, foodY*size, size, size);
+        game.fillRect(foodX*size, foodY*size, size, size); //v2
     } 
 </script>
 ~~~

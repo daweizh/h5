@@ -45,7 +45,7 @@
     </style>
 	~~~
 5. 绘制食物
-	~~~html
+	~~~js
     <script type="text/javascript">
         var field;
         var game;
@@ -61,7 +61,7 @@
 
 ## 1.4 代码注解
 
-~~~html
+~~~
 <!DOCTYPE html>
 <html>
     <head>
@@ -69,44 +69,44 @@
         <title>Greedy Snake</title>
         <style type="text/css">
             /*直接对div标记规定样式*/
-            div {
+            div { /*v1*/
                 width:400px;
                 /*上下边界为0，左右边界自适应*/
                 margin:0 auto;  
             }
             /*直接对canvas标记规定样式*/
-            canvas {
+            canvas { /*v1*/
                 background:#abcdef;
                 border:1px solid #000000;
             }
         </style>
         <script type="text/javascript">
             /*定义canvas对象变量*/
-            var field;
+            var field; //v1
             /*field环境对象，用来执行各种绘制行为*/
-            var game;
+            var game; //v1
             /*当所有网页内容加载完成后执行*/
-            window.onload = function(){
+            window.onload = function(){ //v1
                 /*获取网页中的canvas对象*/
-                field = document.getElementById("field");
+                field = document.getElementById("field"); //v1
                 /*得到canvas对象field所创建的绘制环境对象*/
-                game = field.getContext("2d");
+                game = field.getContext("2d"); //v1
                 /*填充颜色，红色*/
-                game.fillStyle = "#ff0000";
+                game.fillStyle = "#ff0000"; //v1
                 /*线条颜色*/
-                game.strokeStyle = "#000000";
+                game.strokeStyle = "#000000"; //v1
                 /*填充绘制一个方块（食物）*/
-                game.fillRect(100, 100, 8, 8);
+                game.fillRect(100, 100, 8, 8); //v1
             }
         </script>
     </head>
     <body>
         <!-- 标题是如何居中的？ -->
-        <h2 align="center">Greedy Snake</h2>
+        <h2 align="center">Greedy Snake</h2> <!-- v1 -->
         <!-- 画布时如何居中的？ -->
-        <div>
+        <div><!-- v1 -->
             <!-- 画布的样式是如何改变的？ -->
-            <canvas id="field" width="400" height="600">
+            <canvas id="field" width="400" height="600"><!-- v1 -->
                 This is the field that snake snaking.
             </canvas>
         </div>
@@ -116,37 +116,40 @@
 
 ## 1.5 核心代码
 
-~~~html
+~~~
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
         <title>Greedy Snake</title>
         <style type="text/css">
-            div {
+            div { /*v1*/
                 width:400px;
                 margin:0 auto;  
             }
-            canvas {
+            canvas { /*v1*/
                 background:#abcdef;
                 border:1px solid #000000;
             }
         </style>
         <script type="text/javascript">
-            var field;
-            var game;
-            window.onload = function(){
-                field = document.getElementById("field");
-                game = field.getContext("2d");
-                game.fillStyle = "#ff0000";
-                game.strokeStyle = "#000000";
-                game.fillRect(100, 100, 8, 8);
+            var field; //v1
+            var game; //v1
+            window.onload = function(){ //v1
+                field = document.getElementById("field"); //v1
+                game = field.getContext("2d"); //v1
+                game.fillStyle = "#ff0000"; //v1
+                game.strokeStyle = "#000000"; //v1
+                game.fillRect(100, 100, 8, 8); //v1
             }
         </script>
     </head>
     <body>
+        <!-- v1 -->
         <h2 align="center">Greedy Snake</h2>
+        <!-- v1 -->
         <div>
+            <!-- v1 -->
             <canvas id="field" width="400" height="600">
                 This is the field that snake snaking.
             </canvas>
