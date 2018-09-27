@@ -34,7 +34,7 @@
             var snakes; //v9
             var foodPlace; //v9
             var snakePlace; //v9
-            var snakeSpeed;
+            var snakeSpeed; //v10
             var steps; //v9
             
             var oldX = oldY = snakeUnitSize;
@@ -47,7 +47,7 @@
                 steps = document.getElementById("steps"); //v9
                 foodPlace = document.getElementById("foodPlace"); //v9
                 snakePlace = document.getElementById("snakePlace"); //v9
-                snakeSpeed = document.getElementById("snakeSpeed"); //v9
+                snakeSpeed = document.getElementById("snakeSpeed"); //v10
 
                 field = document.getElementById("field"); //v1
                 game = field.getContext("2d"); //v1
@@ -56,7 +56,7 @@
 
                 putFood(); //v8
 
-                heartbeat = window.setInterval(snakeMove, speed); //v3
+                heartbeat = window.setInterval(snakeMove, speed); //v3，v10
             }
 
             document.onkeydown = function(e) { //v5
