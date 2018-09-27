@@ -1,69 +1,57 @@
-# 6. 贪吃蛇版本迭代（V6） 
+# 7. 贪吃蛇版本迭代（V7） 
 
 - 张大为
 - 辽宁师范大学计算机与信息技术学院@大连
 - [https://daweizh.github.io/h5/](https://daweizh.github.io/h5/)  QQ:1243605845
 
-## 6.1 需求说明
+## 7.1 需求说明
 
-- 设定初始蛇身长度
-- 定义蛇身容器
-- 记录蛇身轨迹坐标
+- 判定蛇身是否缠绕
 
-## 6.2 效果设计
+## 7.2 效果设计
 
 ![效果图](demo.png)
 
-## 6.3 编程过程
+## 7.3 编程过程
 
-1. 定义蛇长长度变量和蛇身容器变量
+- 判断蛇头是否与蛇身发生碰撞
     ~~~js
-    var snakeLength = 20;
-    var pathMap = []; 
-    ~~~
-2. 在snakeMove方法中增加在蛇身容器中保存蛇身坐标功能
-    ~~~js
-    if (pathMap.length>snakeLength) {
-        var snakeTail = pathMap.shift();
-        game.clearRect(snakeTail['x'], snakeTail['y'], snakeUnitSize, snakeUnitSize); 
-    };
-    pathMap.push({'x':x,'y':y});
+    for(var i=0; i<pathMap.length; i++){
+        if( parseInt(pathMap[i].x)==x && parseInt(pathMap[i].y)==y){
+            alert("你挂了，继续努力吧！失败原因：撞到自己了.....");
+            window.location.reload(); 
+        } 
+    } 
     ~~~
 
-## 6.4 代码注解
+## 7.4 代码注解
 
 ~~~js
 <script type="text/javascript">
-    
-    ....
-    
-    //蛇身长度
-    var snakeLength = 20;
-    //记录蛇运行路径
-    var pathMap = []; 
-
     ...
 
     function snakeMove(){ //v3
         //v4 ...
-        //保持舍身长度
-        if (pathMap.length>snakeLength) {
-            //删除数组第一项，并且返回该元素（蛇尾）
-            var snakeTail = pathMap.shift();
-            //清除蛇尾处蛇节
-            game.clearRect(snakeTail['x'], snakeTail['y'], snakeUnitSize, snakeUnitSize); 
-        };
-        //蛇身在蛇头处增长一节
-        pathMap.push({'x':x,'y':y}); 
+        
+        //判断是否碰到了自己，对蛇自己身体的每一节进行判断
+        for(var i=0; i<pathMap.length; i++){ //v7
+            //如果要走到的位置是自己身体的一部分
+            if( parseInt(pathMap[i].x)==x && parseInt(pathMap[i].y)==y){ //v7
+                //碰到自己了
+                alert("你挂了，继续努力吧！失败原因：撞到自己了....."); //v7
+                //重新加载网页
+                window.location.reload();  //v7
+            } 
+        } 
             
-        //v3 ...
+        //v3 ... v6
     }       
 
     ...
 </script>
 ~~~
 
-## 6.5 核心代码
+## 7.5 核心代码
 
 ~~~
 <!DOCTYPE html>
@@ -140,11 +128,18 @@
                     alert("你挂了，继续努力吧!失败原因：碰壁了....."); //v4
                     window.location.reload(); //v4
                 }
+                
+                for(var i=0; i<pathMap.length; i++){ //v7
+                    if( parseInt(pathMap[i].x)==x && parseInt(pathMap[i].y)==y){ //v7
+                        alert("你挂了，继续努力吧！失败原因：撞到自己了....."); //v7
+                        window.location.reload(); //v7
+                    } 
+                } 
 
-                if (pathMap.length>snakeLength) { //v6
+                if (pathMap.length>snakeLength) {  //v6
                     var snakeTail = pathMap.shift(); //v6
-                    game.clearRect(snakeTail['x'], snakeTail['y'], snakeUnitSize, snakeUnitSize); //v6 
-                };
+                    game.clearRect(snakeTail['x'], snakeTail['y'], snakeUnitSize, snakeUnitSize); //v6
+                }
                 pathMap.push({'x':x,'y':y}); //v6
                 
                 game.fillStyle = "#006699"; //v3
